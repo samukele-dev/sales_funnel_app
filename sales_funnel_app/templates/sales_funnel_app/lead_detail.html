@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lead Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .lead-details {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lead-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .lead-details strong {
+            color: #333;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lead Detail</h1>
+        <div class="lead-details">
+            <p><strong>Company:</strong> {{ lead.company }}</p>
+            <p><strong>Name:</strong> {{ lead.name }}</p>
+            <p><strong>Email:</strong> {{ lead.email }}</p>
+            <p><strong>Phone:</strong> {{ lead.phone }}</p>
+            <p><strong>Status:</strong> {{ lead.status }}</p>
+        </div>
+        <a class="back-link" href="{% url 'lead_list' %}">Back to Lead List</a>
+    </div>
+</body>
+
+</html>

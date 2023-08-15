@@ -1,0 +1,26 @@
+<!-- sales_funnel_app/templates/home.html -->
+{% extends 'base.html' %} {% block title %}Sales Funnel - Home{% endblock %} {% block content %}
+<div class="container">
+    <h1></h1>
+
+    <div class="card">
+        <h2 class="card-title">Sales Funnel</h2>
+        <div class="card-body">
+            Manage your leads in the sales funnel. {% if user.is_authenticated %}
+            <a href="{% url 'lead_list' %}" class="action-button">Go to Sales Funnel</a> {% else %}
+            <a href="{% url 'login' %}" class="action-button">Log in to access Sales Funnel</a> {% endif %}
+
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="card-title">Other Funnels</h2>
+        <div class="card-body">
+            Explore other funnels and their data.
+            <!-- Add links to other funnels here -->
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block title %}Sales Funnel - Home{% endblock %} {% block content %}
+
+<div class="container">
+
+    <h1>Sales Funnel</h1>
+    <div class="search-bar">
+        <form method="get" action="{% url 'lead_list' %}">
+            <input type="text" name="search" placeholder="Search by name or status">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="lead-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lead in leads %}
+                <tr class="lead-item">
+                    <td>{{ lead.company }}</td>
+                    <!-- Assuming 'company' is a field in your Lead model -->
+                    <td>{{ lead.name }}</td>
+                    <td>{{ lead.status }}</td>
+                    <td class="lead-actions">
+                        <a class="action-button" href="{% url 'update_lead_status' lead.id %}">Update Status</a>
+                        <a class="action-button" href="{% url 'lead_detail' lead.id %}">View Details</a>
+                        <a class="action-button" href="{% url 'delete_lead' lead.id %}">Delete Lead</a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a class="create-lead-link" href="{% url 'create_lead' %}">Create New Lead</a>
+
+    <div class="pagination">
+        <span>Page {{ leads.number }} of {{ leads.paginator.num_pages }}</span>
+        <a href="?page=1">First</a>
+        <a href="?page={{ leads.previous_page_number }}">Previous</a>
+        <a href="?page={{ leads.next_page_number }}">Next</a>
+        <a href="?page={{ leads.paginator.num_pages }}">Last</a>
+    </div>
+</div>
+
+{% endblock %}

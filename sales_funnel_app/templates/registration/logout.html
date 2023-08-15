@@ -1,0 +1,8 @@
+<!-- sales_funnel_app/templates/registration/logout.html -->
+{% extends 'base.html' %} {% block title %}Logged Out{% endblock %} {% block content %}
+<div class="container">
+    <h1>Logged Out</h1>
+    <p>You have been successfully logged out.</p>
+    <a href="{% url 'login' %}" class="action-button">Log In Again</a>
+</div>
+{% endblock %}
