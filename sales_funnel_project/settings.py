@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vi8u#u^v3e2t3ar2)s8b%tj2kt()a%wqtkalt7bpk#dhw4c_ix
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nb-funnel.onrender.com','127.0.0.1']
 
 LOGIN_REDIRECT_URL = 'lead_list'
 
