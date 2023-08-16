@@ -3,7 +3,7 @@ services:
     env:
       - key: SECRET_KEY
         # Add your Django SECRET_KEY value here
-        value: "django-insecure-s2q7yu4r=*@db)s03qpm2dpabgr8!*7ycv876asxi))zpxalty"
+        value: "django-insecure-vi8u#u^v3e2t3ar2)s8b%tj2kt()a%wqtkalt7bpk#dhw4c_ix"
     buildCommand: python manage.py collectstatic --noinput
     staticPublishPath: static
     start_command: "gunicorn sales_funnel_project.wsgi --bind 0.0.0.0:$PORT"
