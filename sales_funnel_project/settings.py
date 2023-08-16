@@ -79,9 +79,12 @@ WSGI_APPLICATION = 'sales_funnel_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sales_funnel_db',
+        'USER': 'neo_breed',
+        'PASSWORD': 'M2nny9ImITHg0gTISDrMWfcELQmiyV6q',
+        'HOST': 'dpg-cje7fkenk9qs73f0i3qg-a.oregon-postgres.render.com',
     }
 }
 
