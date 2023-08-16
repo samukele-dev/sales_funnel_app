@@ -1,0 +1,21 @@
+services:
+  - name: web
+    env:
+      - key: SECRET_KEY
+        # Add your Django SECRET_KEY value here
+        value: "django-insecure-s2q7yu4r=*@db)s03qpm2dpabgr8!*7ycv876asxi))zpxalty"
+    buildCommand: python manage.py collectstatic --noinput
+    staticPublishPath: static
+    start_command: "gunicorn sales_funnel_project.wsgi --bind 0.0.0.0:$PORT"
+    health_check_path: "/"
+
+databases:
+  - name: my-database
+    type: postgresql
+    plan: free
+    config:
+      database: sales_funnel_db
+      user: neo_breed
+      password: M2nny9ImITHg0gTISDrMWfcELQmiyV6q
+      host: dpg-cje7fkenk9qs73f0i3qg-a  # Replace with your PostgreSQL host
+      port: 5432
